@@ -5,46 +5,70 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bglandingpage"
-    tools:context=".MainActivity">
+    tools:context=".View.MainActivity">
 
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/icon_landingpage"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="33dp" />
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_landingpage" />
 
     <TextView
         android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:text="Welcome"
         android:textColor="@color/colorAccent"
         android:textSize="36sp"
-        app:fontFamily="@font/acme"
-        tools:layout_editor_absoluteX="131dp"
-        tools:layout_editor_absoluteY="124dp" />
+        app:fontFamily="@font/avenir_book"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/button_white"
-        app:srcCompat="@drawable/button_white"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="433dp" />
+        app:layout_constraintBottom_toTopOf="@+id/te4xt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/button_white" />
 
     <TextView
         android:id="@+id/te4xt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="40dp"
         android:text="Don’t have account ? Sign up now"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
-        app:fontFamily="@font/acme"
-        tools:layout_editor_absoluteX="79dp"
-        tools:layout_editor_absoluteY="501dp" />
+        app:fontFamily="@font/avenir_book"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
 
