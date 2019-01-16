@@ -3,16 +3,19 @@ package com.robert.soapbox.View;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.robert.soapbox.R;
 
@@ -30,42 +33,47 @@ public class Menu extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_menu);
         pager = findViewById(R.id.vp_horizontal_ntb);
-        pager.setOffscreenPageLimit(5); // How much pages you have
-        pager.setCurrentItem(0); // Returns to First Fragment
+        pager.setOffscreenPageLimit(5);
+
         initUI();
     }
     private void initUI() {
-        final ViewPager pager = (ViewPager) findViewById(R.id.vp_horizontal_ntb);
-        pager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+        final ViewPager pager = findViewById(R.id.vp_horizontal_ntb);
+        pager.setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
             // Returns total number of pages
-
+            @Override
             public int getCount() {
                 return 5;
             }
-
             // Returns the fragment to display for that page
             @Override
             public Fragment getItem(int position) {
+               // Log.d("position",""+pager.getCurrentItem());
+
                 switch (position) {
                     case 0: // Fragment # 0 - This will show FirstFragment
+                        Log.d("position",""+0);
+                        return new testFragment();
 
-                        return new ContentQue();
                     case 1: // Fragment # 1 - This will show SecondFragment
-
+                        Log.d("position",""+1);
                         return new ContentQue();
                     case 2: // Fragment # 2 - This will show ThirdFragment
-
-                        return new ContentQue();
+                        Log.d("position",""+2);
+                        return new testFragment();
                     case 3: // Fragment # 3 - This will show FourthFragment
-
-                        return new ContentQue();
+                        Log.d("position",""+3);
+                        return new testFragment();
                     case 4: // Fragment # 4 - This will show FifthFragment
-
+                        Log.d("position",""+4);
                         return new ContentQue();
                     default:
-                        return new ContentQue();
+                        return null;
                 }
+
+
             }
+
 
             // Returns the page title for the top indicator
             @Override
@@ -126,7 +134,7 @@ public class Menu extends AppCompatActivity {
         );
 
         navigationTabBar.setModels(models);
-        navigationTabBar.setViewPager(pager, 2);
+        navigationTabBar.setViewPager(pager, 0);
         navigationTabBar.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(final int position, final float positionOffset, final int positionOffsetPixels) {
